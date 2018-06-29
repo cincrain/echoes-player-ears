@@ -3,10 +3,35 @@
   "compilerOptions": {
     "outDir": "../out-tsc/app",
     "module": "es2015",
-    "types": []
+    "baseUrl": "./",
+    "paths": {
+      "~/*":           ["/*"],
+      "@app/*":        ["app/*"],
+      "@containers/*": ["app/containers/*"],
+      "@core/*":       ["app/core/*"],
+      "@api/*":        ["app/core/api/*"],
+      "@resolvers/*":  ["app/core/resolvers/*"],
+      "@services/*":   ["app/core/services/*"],
+      "@store/*":      ["app/core/store/*"],
+      "@shared/*":     ["app/shared/*"],
+      "@animations/*": ["app/shared/animations/*"],
+      "@mocks/*":      ["../tests/mocks/*'"],
+      "@env/*":        ["environments/*"]
+    },
+    "types": [
+      "gapi",
+      "gapi.youtube",
+      "gapi.auth2",
+      "youtube",
+      "jasmine",
+      "node"
+    ]
   },
   "exclude": [
     "src/test.ts",
     "**/*.spec.ts"
-  ]
+  ],
+  "angularCompilerOptions": {
+    "preserveWhitespaces": false
+  }
 }
