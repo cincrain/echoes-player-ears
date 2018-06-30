@@ -1,0 +1,41 @@
+@import '~css/echoes-variables.scss';
+
+:host {
+  --media-title-text-color: var(--brand-primary);
+  --media-title-shadow: var(--brand-dark-bg-color);
+  --media-expand-icon-bg-color: var(--brand-dark-bg-color-transparent);
+  $line-height: 6rem;
+
+  line-height: 1.5rem;
+
+  .yt-media-title {
+    display: inline-block;
+    max-width: 40rem;
+    line-height: $line-height;
+    margin: 0 1rem 0 0;
+    font-size: 1.5rem;
+    color: var(--media-title-text-color);
+
+    .media-thumb-container {
+      cursor: pointer;
+      position: relative;
+      margin-right: 2rem;
+
+      .media-thumb {
+        height: $line-height;
+      }
+
+      .fa {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        background: var(--media-expand-icon-bg-color);
+      }
+    }
+
+    .title {
+      text-shadow: 0 0 0.5rem var(--media-title-shadow);
+      font-size: 2rem;
+    }
+  }
+}

@@ -1,0 +1,16 @@
+:host {
+  .media-bg {
+    height: 290px;
+    overflow: hidden;
+    box-shadow: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: 40%;
+    background-position: top;
+    filter: blur(20px);
+    transform: rotate(-20deg) translateY(-120px);
+  }
+}

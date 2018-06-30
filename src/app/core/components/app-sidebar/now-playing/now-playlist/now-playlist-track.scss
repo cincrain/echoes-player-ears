@@ -1,0 +1,146 @@
+@import '~css/echoes-variables.scss';
+
+@media (min-width: 320px) {
+:host {
+  $track-badge-index: 10;
+  $track-button: 15;
+  $track-border-color: #262829;
+  --track-badge-color: var(--brand-dark-bg-color);
+  --track-active-border-color: var(--brand-primary);
+  --track-bg-active-color: var(--brand-dark-bg-color-transparent);
+  $remove-font-size: 1.5rem;
+  $playlist-font-size: 1.3rem;
+  --text-color: var(--brand-inverse-text);
+  --track-active-border-color: var(--brand-primary);
+  --track-bg-active-color: var(--brand-dark-bg-color-transparent);
+
+  .now-playlist-track__trigger {
+    padding: 1.5rem;
+    text-shadow: none;
+    border-bottom: 1px solid var(--sidebar-bg-secondary);
+    color: rgb(201,199,199);
+
+    .track-contents {
+      display: flex;
+      flex-direction: row;
+    }
+
+    .active & {
+      border-right: 6px solid var(--track-active-border-color);
+      box-shadow: inset 0 0 6px var(--track-bg-active-color);
+      background: var(--track-bg-active-color);
+      color: var(--text-color);
+    }
+  }
+
+  .track-number {
+    position: absolute;
+    left: 1.5rem;
+    padding: 0.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: rgba(0,0,0, 0.9);
+  }
+
+  .track-actions {
+    position: absolute;
+    top: 5rem;
+    right: 1rem;
+  }
+
+  .track-info {
+    max-height: 400px;
+    overflow: auto;
+  }
+
+  .playlist-track {
+    display: inline-block;
+    font-size: $playlist-font-size;
+  }
+
+  .video-title {
+    max-height: 6rem;
+    min-height: 6.5rem;
+    overflow: hidden;
+    font-size: small;
+  }
+
+  .video-thumb {
+    width: 6.4rem;
+    height: 4.8rem;
+    margin-right: 8px;
+    .video-thumb__image {
+      height: 100%;
+    }
+  }
+
+  .remove-track {
+    position: absolute;
+    top: 1rem;
+    right: 0rem;
+    z-index: $track-button;
+    transform: translateX(-1rem);
+    font-size: $remove-font-size;
+  }
+
+  .badge-info {
+    display: block;
+    border-radius: 0;
+    position: relative;
+    margin: 0 auto;
+    margin-top: 0;
+    z-index: $track-badge-index;
+    font-size: 1rem;
+    background: var(--track-badge-color);
+  }
+
+  .track-tracks {
+    margin: 1.5rem -1.5rem 0;
+    border-top: 1px solid var(--track-active-border-color);
+
+    .album-tracks-heading {
+      margin: 0 2rem;
+      font-size: 1.5rem;
+      color: var(--track-active-border-color);
+    }
+
+    .list-group-item {
+      border: none;
+      color: var(--text-color);
+
+      &:hover {
+        color: var(--track-active-border-color);
+      }
+    }
+  }
+}
+}
+
+@media (min-width: 768px) {
+:host {
+  .remove-track {
+    transform: translateX(5rem);
+  }
+  &:hover {
+    .remove-track {
+      transform: translateX(-1rem);
+    }
+  }
+
+  .track-actions {
+    .closed & {
+      transform: translateX(20px);
+    }
+  }
+  .track-info {
+    .closed & {
+      display: none;
+    }
+  }
+  .track-tracks {
+    .btn {
+      font-size: 1.5rem;
+    }
+  }
+}
+}

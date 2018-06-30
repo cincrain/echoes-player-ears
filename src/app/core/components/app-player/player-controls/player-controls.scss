@@ -1,0 +1,78 @@
+@import '~css/echoes-variables.scss';
+
+:host {
+  --btn-color: var(--brand-inverse-text);
+  --btn-control-primary-color: var(--brand-primary);
+  $btn-control-font-size: 1.5rem;
+  $btn-control-padding: 1.5rem 1.7rem;
+  $btn-primary-font-size: 3rem;
+
+  @mixin button-style () {
+    outline: none;
+    border: none;
+    border-radius: 0;
+    font-size: $btn-control-font-size;
+    background: transparent;
+    color: var(--btn-color);
+  }
+
+  .btn {
+    &.next,
+    &.previous,
+    &.repeat {
+      padding: $btn-control-padding;
+    }
+  }
+
+  .btn {
+    @include button-style();
+    vertical-align: middle;
+    line-height: 0;
+
+    &:hover {
+      @include button-style();
+    }
+
+    &.pause {
+      display: none;
+    }
+
+    &.play,
+    &.pause {
+      border: 0;
+      top: 3px;
+      margin: 0;
+      padding: 0.9rem 1.4rem;
+      font-size: $btn-primary-font-size;
+      color: var(--btn-control-primary-color);
+    }
+  }
+
+  .show-player {
+    transform: translateY(0);
+  }
+
+  .player-controls {
+    padding: 0.5rem;
+  }
+  .play,
+  .pause {
+    mix-blend-mode: screen;
+  }
+
+  &.yt-playing .player-controls {
+    .play {
+      display: none;
+    }
+
+    .pause {
+      display: inline-block;
+    }
+  }
+
+  &.yt-repeat-on .player-controls {
+    .repeat {
+      color: var(--btn-control-primary-color);
+    }
+  }
+}

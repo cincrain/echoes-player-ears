@@ -78,7 +78,7 @@
             "karmaConfig": "src/karma.conf.js",
             "styles": [
               "node_modules/font-awesome/scss/font-awesome.scss",
-              "src/css/styles.scss"
+              "src/css/style.scss"
             ],
             "scripts": [],
             "assets": [

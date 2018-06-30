@@ -1,0 +1,136 @@
+@import '~css/echoes-variables.scss';
+
+@media (min-width: 320px) {
+:host {
+  --playlist-primary: var(--brand-primary);
+  --playlist-bg-primary: var(--brand-bg-lite-transparent);
+  --playlist-dark-transparent: var(--brand-dark-bg-color-transparent);
+  --playlist-inverse-color: var(--brand-inverse-text);
+  --playlist-link-color: var(--link-primary-color);
+
+  .youtube-playlist-item {
+    box-shadow: none;
+    border: none;
+    border-radius: 0;
+    margin: 0;
+    padding: 1rem;
+    background-color: rgba(0,0,0, 0);
+
+    .playlist-link .title {
+      color: var(--playlist-link-color);
+    }
+  }
+
+  .media-title {
+    display: block;
+    text-shadow: none;
+    text-decoration: none;
+    position: relative;
+    font-family: 'Open Sans Condensed', sans-serif;
+  }
+
+  .front {
+    box-shadow: 0 1px 30px -5px var(--playlist-dark-transparent);
+    position: relative;
+    padding: 0;
+    background: var(--playlist-bg-primary);
+  }
+
+  .media-thumb {
+    display: block;
+    cursor: pointer;
+    position: relative;
+    font-weight: normal;
+
+    .thumb-image {
+      display: block;
+      height: 100%;
+      max-width: 100%;
+      transform: scale(1.7) translateY(0);
+      transition: transform 0.3s ease-out;
+      border: 0;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    &:hover {
+      .thumb-image {
+        transform: scale(1.4) translate(0,0);
+      }
+
+      .play-media {
+        opacity: 1;
+        transform: translate(-50%,-50%);
+      }
+    }
+
+    .play-media {
+      opacity: 0;
+      border: none;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      background: var(--playlist-primary);
+      color: var(--playlist-inverse-color);
+    }
+
+    .thumbnail {
+      height: 190px;
+      overflow: hidden;
+      clear: both;
+      box-shadow: none;
+      border: none;
+      margin-bottom: 0;
+      padding: 0;
+      background-color: var(--playlist-inverse-color);
+    }
+  }
+
+  .item-actions {
+    width: 100%;
+    bottom: 0;
+    margin: 0;
+    padding: 1rem;
+    background-color: var(--playlist-dark-transparent);
+
+    .title {
+      margin: 0;
+    }
+
+    .playlist-link:hover {
+      text-decoration: none;
+    }
+
+    .loader {
+      position: absolute;
+      top: 8px;
+      right: 10px;
+      color: var(--brand-primary);
+    }
+  }
+}
+}
+
+@media (min-width: 768px) {
+:host {
+  width: 24.5%;
+  max-width: 28rem;
+  .item-actions .playlist-link {
+    display: block;
+  }
+}
+}
+
+@media (min-width: 767px) {
+:host {
+  .youtube-list-item {
+    max-width: 320px;
+  }
+}
+}
+
+@media (min-width: 1440px) {
+:host {
+  width: 280px;
+}
+}

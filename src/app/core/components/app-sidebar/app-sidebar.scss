@@ -1,0 +1,126 @@
+@import '~css/core/global.scss';
+
+$navbar-new-height: 5rem;
+
+@mixin closed-sidebar  () {
+  .sidebar-left-fixed.closed {
+    @include transform(translatex(0rem));
+
+    .sidebar-backdrop {
+      display: none;
+    }
+  }
+}
+
+@media (min-width: 320px) {
+:host {
+  position: fixed;
+  top: 0;
+  left: -30rem;
+  bottom: 0;
+  margin: 0;
+  padding: 0;
+  z-index: 1030;
+  transition: left 0.3s;
+  transition-timing-function: cubic-bezier(0.65,0.05,0.36, 1);
+
+  &.closed {
+    left: 0;
+  }
+
+  .sidebar {
+    --sidebar-bg-color: var(--sidebar-bg);
+    --sidebar-brand-bg: var(--brand-primary);
+    --sidebar-text-color: var(--sidebar-text);
+
+    display: flex;
+    flex-direction: column;
+    align-items: initial;
+    align-self: auto;
+
+    width: $drawer-width;
+    height: 100%;
+    z-index: $zindex-navbar-fixed;
+    // by default should be hidden
+    padding-bottom: 21%;
+    border: none;
+    border-radius: 0;
+    transform: translateX(-30rem);
+    background-color: var(--sidebar-bg-color);
+
+    .navbar-brand {
+      width: 100%;
+      float: none;
+      line-height: $navbar-new-height;
+      padding-left: 1.5rem;
+      color: rgb(50,53,56);
+    }
+
+    &.closed {
+      transform: none;
+      .sidebar-backdrop {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: $drawer-width;
+        right: 0;
+        bottom: 0;
+        background-color: var(--brand-dark-bg-color-transparent);
+      }
+    }
+
+    .sidebar-backdrop {
+      display: none;
+    }
+
+    .navbar {
+      z-index: 1030;
+      margin-bottom: 0;
+      border: none;
+      border-bottom: none;
+      border-radius: 0;
+    }
+
+    .sidebar-backdrop {
+      z-index: 1029;
+    }
+  }
+}
+}
+
+@media (min-width: 768px) {
+:host {
+  left: 0;
+
+  .sidebar {
+    transform: none;
+    transition: transform, width 0.3s ease-out;
+
+    &.closed > .sidebar-backdrop {
+      display: none;
+    }
+    + .sidebar-backdrop {
+      display: none;
+    }
+
+    &.closed {
+      width: $sidebar-closed-width;
+
+      .navbar-brand {
+        padding: 0;
+        text-align: center;
+      }
+    }
+  }
+}
+}
+
+@media (min-width: 1024px) {
+  @include closed-sidebar();
+
+  .sidebar {
+    .sidebar-backdrop {
+      display: none;
+    }
+  }
+}

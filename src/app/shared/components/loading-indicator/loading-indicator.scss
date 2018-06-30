@@ -1,0 +1,25 @@
+@import '~css/core/global.scss';
+
+:host {
+  display: block;
+  min-width: 40%;
+  z-index: $zindex-navbar;
+  transform: translateY(-20rem);
+  transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  position: fixed;
+  margin: 2rem;
+
+  &.show-loader {
+    transform: translateY(0rem);
+  }
+
+  .alert {
+    box-shadow: 0 0 20px -3px #000;
+    padding: 2rem;
+    background-color: var(--sidebar-bg);
+
+    &.alert-info {
+      color: var(--brand-primary);
+    }
+  }
+}
