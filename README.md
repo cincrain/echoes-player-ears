@@ -1,27 +1,16 @@
-# EchoesPlayerEars
+# EARS Pattern in Angular 5+ and ngrx 5+
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.3.
+Working with EARS pattern in @ngrx is simple and straightforward. This pattern can help you code and maintain @ngrx effect and its reducer function system productive.
 
-## Development server
+Two pilot projects in this repository illustrate how to utilize [@ngrx effect](https://github.com/ngrx/platform/blob/master/docs/effects/README.md) and its reducer and [@angular](https://github.com/angular/angular-cli) application using EARS pattern.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+- [books-plotly-ngrx-ears](https://github.com/cincrain/books-plotly-ngrx-ears)
+- [echoes-player-ears](https://github.com/cincrain/echoes-player-ears)
 
-## Code scaffolding
+## What is EARS and how to use EARS
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Refer to [How to deveop from `SearchE0R1` to `SearchE1R1`](https://github.com/cincrain/books-plotly-ngrx-ears)
 
-## Build
+## License
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+&copy; 2018 cincrain, MIT License
